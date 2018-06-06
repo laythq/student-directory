@@ -21,10 +21,10 @@ def print_header
 end
 
 
-def print_names_and_cohort(students)
-  students.each do |x|
-    puts "#{x[:name]} (#{x[:cohort]} cohort)"
-  end
+def print_names_and_cohort_2(students)
+  students.each_with_index {
+    |(key, value), y|
+    puts "#{y + 1}. #{key[:name]} (#{key[:cohort]} cohort)"}
 end
 
 def print_footer(students)
@@ -33,5 +33,5 @@ end
 
 students = input_students
 print_header
-print_names_and_cohort(students)
+print_names_and_cohort_2(students)
 print_footer(students)

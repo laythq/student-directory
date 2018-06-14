@@ -1,38 +1,15 @@
-def input_students
-  puts "Please enter the name of a students"
-  puts "To finish, just hit return twice"
+> track_name("Bibi")
+=> "Name stored!"
+> show_names
+=> ["Bibi"]
+> track_name("Layth")
+=> "Name stored!"
+> show_names
+=> ["Bibi", "Layth"]
 
-  students = []
-
-  name = gets.chomp
-
-  while !name.empty? do
-    students << {name: name, cohort: :november}
-    puts "Now we have #{students.count} students"
-    name = gets.chomp
+describe "track_name method" do
+  it "gives us a friendly message" do
+    expect(track_name("Bibi")).to eq "Name stored!"
   end
 
-students
 end
-
-def print_names_and_cohort(students)
-  students.each do |x|
-    puts "#{x[:name]} (#{x[:cohort]} cohort)"
-  end
-end
-
-def index(students)
-  students.each_with_index { |(key, value), y| puts y}
-
-end
-
-def print_names_and_cohort_2(students)
-  students.each_with_index {
-    |(key, value), y|
-    puts "#{y + 1}. #{key[:name]} (#{key[:cohort]} cohort)"}
-
-end
-
-
-students = input_students
-print_names_and_cohort_2(students)
